@@ -1,0 +1,40 @@
+{
+    "name": "veda/flash",
+    "type": "project",
+    "license": "MIT",
+    "authors": [{
+        "name": "ketu.lai",
+        "email": "ketu.lai@gmail.com"
+    }],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0",
+        "veda/utils": "dev-master",
+        "symfony/http-foundation": "^3.2",
+        "symfony/routing": "^3.2",
+        "symfony/config": "^3.2",
+        "symfony/http-kernel": "^3.2",
+        "pimple/pimple": "^3.0",
+        "psr/http-message": "^1.0",
+        "propel/propel": "^2.0@alpha"
+    },
+    "autoload": {
+        "psr-4": {
+            "Veda\\Flash\\": "src/Veda/Flash"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Veda\\Flash\\Tests\\": "tests/"
+        }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0"
+    },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        }
+    }
+}
