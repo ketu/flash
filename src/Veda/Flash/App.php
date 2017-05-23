@@ -77,12 +77,18 @@ final class App
         );
     }
 
+    public function map($path, $to = null, $methods = [], $name = null, array $defaultOptions = [])
+    {
+        $this->routes->map($path, $to, $name, $defaultOptions)->setMethods($methods);
+    }
+
+
     private function boot()
     {
         $this->booted = true;
     }
 
-    public function run()
+    public function run($debug = false)
     {
         if (!$this->booted) {
             $this->boot();
@@ -117,7 +123,6 @@ final class App
             $response = new Response('An error occurred', 500);
             return $response->send();
         }
-
     }
 
     public function terminate()
