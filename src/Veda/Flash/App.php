@@ -117,10 +117,21 @@ final class App
             return $response->send();
 
         } catch (ResourceNotFoundException $e) {
-            $response = new Response('Not Found', 404);
+        	if ($debug) {
+        		$message = $e->getMessage();
+        	} else {
+        		$message = 'Not Found';
+        	}
+
+            $response = new Response($message, 404);
             return $response->send();
         } catch (\Exception $e) {
-            $response = new Response('An error occurred', 500);
+        	 if ($debug) {
+        		$message = $e->getMessage();
+        	} else {
+        		$message = 'An error occurred';
+        	}
+            $response = new Response($message, 500);
             return $response->send();
         }
     }
